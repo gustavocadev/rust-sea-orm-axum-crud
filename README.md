@@ -2,6 +2,8 @@
 
 ## Setup
 
+Rename the `.env.example` file to `.env`.
+
 Create a migration file with(which means create a table in the database):
 
 ```bash
