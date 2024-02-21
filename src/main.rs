@@ -2,7 +2,7 @@ mod controllers;
 mod lib;
 mod routes;
 
-use crate::routes::tasks_routes::tasks_api;
+use crate::routes::tasks_routes::init_tasks_routes;
 use axum::Router;
 
 #[tokio::main]
@@ -11,7 +11,7 @@ async fn main() {
   tracing_subscriber::fmt::init();
 
   // create a new router
-  let app = Router::new().nest("/api/tasks", tasks_api());
+  let app = Router::new().nest("/api/tasks", init_tasks_routes());
 
   // create a new listener
   let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
